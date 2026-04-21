@@ -3,7 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lenex Hosting | Minecraft & VPS Hosting</title>
+    <title>LenexHost – Minecraft & VPS Hosting</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         * {
             margin: 0;
@@ -12,144 +14,237 @@
         }
 
         body {
-            font-family: 'Poppins', sans-serif;
-            background: #0a0a2a;
-            color: white;
+            font-family: 'Inter', sans-serif;
+            background: #0B0C10;
+            color: #fff;
+            line-height: 1.6;
         }
 
-        header {
-            background: linear-gradient(135deg, #0a0a2a, #1a1a4a);
-            padding: 20px 0;
-            border-bottom: 2px solid #00ffaa;
+        /* Gradient & Glow Effects */
+        .gradient-text {
+            background: linear-gradient(135deg, #A855F7, #EC4899);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .glow {
+            text-shadow: 0 0 20px rgba(168, 85, 247, 0.5);
+        }
+
+        /* Header / Navbar */
+        .navbar {
+            background: rgba(11, 12, 16, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         }
 
         .container {
-            width: 90%;
-            max-width: 1200px;
-            margin: auto;
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 2rem;
         }
 
-        nav {
+        .nav-flex {
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
 
         .logo {
-            font-size: 28px;
-            font-weight: bold;
+            font-size: 1.8rem;
+            font-weight: 800;
         }
 
         .logo span {
-            color: #00ffaa;
+            background: linear-gradient(135deg, #A855F7, #EC4899);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
         }
 
         .nav-links a {
-            color: white;
+            color: #fff;
             text-decoration: none;
-            margin-left: 30px;
+            font-weight: 500;
             transition: 0.3s;
         }
 
         .nav-links a:hover {
-            color: #00ffaa;
+            color: #A855F7;
         }
 
+        .btn-primary {
+            background: linear-gradient(135deg, #A855F7, #EC4899);
+            padding: 0.6rem 1.5rem;
+            border-radius: 8px;
+            font-weight: 600;
+            border: none;
+            color: white;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .btn-primary:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 20px rgba(168, 85, 247, 0.4);
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 2px solid #A855F7;
+            padding: 0.6rem 1.5rem;
+            border-radius: 8px;
+            font-weight: 600;
+            color: white;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .btn-outline:hover {
+            background: #A855F7;
+        }
+
+        /* Hero Section */
         .hero {
+            padding: 6rem 0 4rem;
             text-align: center;
-            padding: 100px 0;
         }
 
         .hero h1 {
-            font-size: 48px;
-            margin-bottom: 20px;
-        }
-
-        .hero h1 span {
-            color: #00ffaa;
+            font-size: 3.8rem;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
         }
 
         .hero p {
-            font-size: 20px;
-            margin-bottom: 30px;
-            color: #ccc;
+            font-size: 1.2rem;
+            color: #b0b0b0;
+            max-width: 700px;
+            margin: 0 auto 2rem;
         }
 
-        .btn {
-            background: #00ffaa;
-            color: #0a0a2a;
-            padding: 12px 30px;
-            text-decoration: none;
-            font-weight: bold;
-            border-radius: 30px;
-            transition: 0.3s;
-            display: inline-block;
-        }
-
-        .btn:hover {
-            background: #00cc88;
-            transform: scale(1.05);
-        }
-
-        .plans {
-            padding: 80px 0;
-            background: #0f0f35;
-        }
-
-        .plans h2 {
-            text-align: center;
-            font-size: 36px;
-            margin-bottom: 50px;
-        }
-
-        .plan-cards {
+        /* Stats */
+        .stats {
             display: flex;
-            gap: 30px;
-            flex-wrap: wrap;
             justify-content: center;
+            gap: 3rem;
+            margin-top: 3rem;
+            flex-wrap: wrap;
         }
 
-        .card {
-            background: #1a1a4a;
-            padding: 30px;
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 2rem;
+            font-weight: 800;
+            color: #A855F7;
+        }
+
+        /* Plans Section */
+        .plans {
+            padding: 5rem 0;
+            background: #0F1117;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .plan-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .plan-card {
+            background: #1A1D2A;
             border-radius: 20px;
-            width: 280px;
-            text-align: center;
+            padding: 2rem;
             transition: 0.3s;
-            border: 1px solid #2a2a5a;
+            border: 1px solid rgba(168, 85, 247, 0.2);
         }
 
-        .card:hover {
+        .plan-card:hover {
             transform: translateY(-10px);
-            border-color: #00ffaa;
+            border-color: #A855F7;
+            box-shadow: 0 10px 30px rgba(168, 85, 247, 0.2);
         }
 
-        .card h3 {
-            font-size: 28px;
-            margin-bottom: 15px;
+        .plan-name {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
         }
 
-        .price {
-            font-size: 32px;
-            color: #00ffaa;
-            margin: 20px 0;
+        .plan-price {
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: #A855F7;
+            margin: 1rem 0;
         }
 
-        .card ul {
+        .plan-features {
             list-style: none;
-            margin: 20px 0;
+            margin: 1.5rem 0;
         }
 
-        .card li {
-            margin: 10px 0;
-            color: #ccc;
+        .plan-features li {
+            margin: 0.8rem 0;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
         }
 
-        footer {
-            background: #050520;
+        .plan-features i {
+            color: #A855F7;
+        }
+
+        /* Features Section */
+        .features {
+            padding: 5rem 0;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .feature-card {
             text-align: center;
-            padding: 30px 0;
-            margin-top: 50px;
+            padding: 2rem;
+            background: #1A1D2A;
+            border-radius: 20px;
+        }
+
+        .feature-card i {
+            font-size: 3rem;
+            color: #A855F7;
+            margin-bottom: 1rem;
+        }
+
+        /* Footer */
+        footer {
+            background: #05060A;
+            padding: 3rem 0;
+            text-align: center;
+            border-top: 1px solid rgba(255,255,255,0.05);
         }
 
         @media (max-width: 768px) {
@@ -157,72 +252,121 @@
                 display: none;
             }
             .hero h1 {
-                font-size: 32px;
+                font-size: 2.5rem;
+            }
+            .container {
+                padding: 0 1rem;
             }
         }
     </style>
 </head>
 <body>
 
-<header>
-    <div class="container">
-        <nav>
-            <div class="logo">Lenex<span>Hosting</span></div>
-            <div class="nav-links">
-                <a href="#">Home</a>
-                <a href="#">Minecraft Hosting</a>
-                <a href="#">VPS</a>
-                <a href="#">Pricing</a>
-                <a href="#">Contact</a>
-            </div>
-        </nav>
+<!-- Navbar -->
+<nav class="navbar">
+    <div class="container nav-flex">
+        <div class="logo">Lenex<span>Host</span></div>
+        <div class="nav-links">
+            <a href="#">Home</a>
+            <a href="#">Minecraft</a>
+            <a href="#">VPS</a>
+            <a href="#">Pricing</a>
+            <a href="#">Contact</a>
+            <button class="btn-outline">Client Area</button>
+        </div>
     </div>
-</header>
+</nav>
 
+<!-- Hero Section -->
 <section class="hero">
     <div class="container">
-        <h1>Ultimate <span>Minecraft & VPS</span> Hosting</h1>
-        <p>Lag-free servers | 24/7 support | DDoS Protection | Instant Setup</p>
-        <a href="#" class="btn">Get Started →</a>
+        <h1>Ultimate <span class="gradient-text glow">Game & VPS</span> Hosting</h1>
+        <p>Powered by Ryzen 9 7950X | NVMe SSD | 24/7 Indian Support | DDoS Protection</p>
+        <button class="btn-primary">Get Started →</button>
+        
+        <div class="stats">
+            <div class="stat-item">
+                <div class="stat-number">99.9%</div>
+                <div>Uptime Guarantee</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">24/7</div>
+                <div>Support</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">1-Click</div>
+                <div>Modpack Install</div>
+            </div>
+        </div>
     </div>
 </section>
 
+<!-- Hosting Plans -->
 <section class="plans">
     <div class="container">
-        <h2>Our Hosting Plans</h2>
-        <div class="plan-cards">
-            <div class="card">
-                <h3>Minecraft Basic</h3>
-                <div class="price">₹499/mo</div>
-                <ul>
-                    <li>2GB RAM</li>
-                    <li>Unlimited Slots</li>
-                    <li>DDoS Protection</li>
-                    <li>24/7 Support</li>
+        <h2 class="section-title">Choose Your <span class="gradient-text">Plan</span></h2>
+        <div class="plan-grid">
+            <div class="plan-card">
+                <div class="plan-name">Minecraft Basic</div>
+                <div class="plan-price">₹499<span style="font-size:1rem">/mo</span></div>
+                <ul class="plan-features">
+                    <li><i class="fas fa-check-circle"></i> 2GB DDR5 RAM</li>
+                    <li><i class="fas fa-check-circle"></i> Unlimited Slots</li>
+                    <li><i class="fas fa-check-circle"></i> DDoS Protection</li>
+                    <li><i class="fas fa-check-circle"></i> Free Subdomain</li>
                 </ul>
-                <a href="#" class="btn">Buy Now</a>
+                <button class="btn-primary" style="width:100%">Order Now</button>
             </div>
-            <div class="card">
-                <h3>Minecraft Pro</h3>
-                <div class="price">₹999/mo</div>
-                <ul>
-                    <li>6GB RAM</li>
-                    <li>Unlimited Slots</li>
-                    <li>Free Domain</li>
-                    <li>Priority Support</li>
+            <div class="plan-card">
+                <div class="plan-name">Minecraft Pro</div>
+                <div class="plan-price">₹999<span style="font-size:1rem">/mo</span></div>
+                <ul class="plan-features">
+                    <li><i class="fas fa-check-circle"></i> 6GB DDR5 RAM</li>
+                    <li><i class="fas fa-check-circle"></i> Unlimited Slots</li>
+                    <li><i class="fas fa-check-circle"></i> Priority Support</li>
+                    <li><i class="fas fa-check-circle"></i> Free .com Domain</li>
                 </ul>
-                <a href="#" class="btn">Buy Now</a>
+                <button class="btn-primary" style="width:100%">Order Now</button>
             </div>
-            <div class="card">
-                <h3>VPS Starter</h3>
-                <div class="price">₹1499/mo</div>
-                <ul>
-                    <li>2 vCPU</li>
-                    <li>4GB RAM</li>
-                    <li>50GB SSD</li>
-                    <li>Root Access</li>
+            <div class="plan-card">
+                <div class="plan-name">VPS Power</div>
+                <div class="plan-price">₹1499<span style="font-size:1rem">/mo</span></div>
+                <ul class="plan-features">
+                    <li><i class="fas fa-check-circle"></i> 4 vCPU Cores</li>
+                    <li><i class="fas fa-check-circle"></i> 8GB RAM</li>
+                    <li><i class="fas fa-check-circle"></i> 100GB NVMe</li>
+                    <li><i class="fas fa-check-circle"></i> Full Root Access</li>
                 </ul>
-                <a href="#" class="btn">Buy Now</a>
+                <button class="btn-primary" style="width:100%">Order Now</button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Features -->
+<section class="features">
+    <div class="container">
+        <h2 class="section-title">Why <span class="gradient-text">LenexHost</span>?</h2>
+        <div class="feature-grid">
+            <div class="feature-card">
+                <i class="fas fa-tachometer-alt"></i>
+                <h3>Ultra-Fast NVMe</h3>
+                <p>Enterprise grade NVMe SSD storage for lightning speeds</p>
+            </div>
+            <div class="feature-card">
+                <i class="fas fa-shield-alt"></i>
+                <h3>DDoS Protection</h3>
+                <p>300Gbps+ mitigation to keep your server online</p>
+            </div>
+            <div class="feature-card">
+                <i class="fas fa-headset"></i>
+                <h3>24/7 Indian Support</h3>
+                <p>Local support team, Hindi & English</p>
+            </div>
+            <div class="feature-card">
+                <i class="fas fa-rocket"></i>
+                <h3>Instant Setup</h3>
+                <p>Automatic setup within 60 seconds of payment</p>
             </div>
         </div>
     </div>
@@ -230,7 +374,7 @@
 
 <footer>
     <div class="container">
-        <p>© 2026 Lenex Hosting. All rights reserved. | Minecraft & VPS Hosting</p>
+        <p>© 2026 LenexHost. All rights reserved. | India's Fastest Growing Game Hosting</p>
     </div>
 </footer>
 
