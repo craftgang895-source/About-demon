@@ -1,87 +1,238 @@
-<!DOCTYPE html><html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Demon Nodes - Power That Never Sleeps</title><style>
-*{margin:0;padding:0;box-sizing:border-box;font-family: Arial, sans-serif;}
-body{background:#0a0a0a;color:white;overflow-x:hidden;}
-header{padding:20px 10%;display:flex;justify-content:space-between;align-items:center;background:#111;border-bottom:1px solid #222;position:fixed;width:100%;top:0;z-index:100;}
-.logo{font-size:24px;font-weight:bold;color:#ff1a1a;}
-nav a{color:white;text-decoration:none;margin-left:20px;transition:0.3s;}
-nav a:hover{color:#ff1a1a;}
-section{padding:100px 10%;min-height:100vh;text-align:center;opacity:0;transform:translateY(50px);transition:all 1s ease-in-out;}
-section.visible{opacity:1;transform:translateY(0);}
-.hero{background:linear-gradient(135deg,#111,#000);display:flex;flex-direction:column;justify-content:center;align-items:center;padding-top:150px;}
-.hero h1{font-size:50px;margin-bottom:20px;}
-.hero span{color:#ff1a1a;}
-.hero p{color:#ccc;margin-bottom:30px;font-size:18px;max-width:700px;}
-.btn{padding:12px 25px;background:#ff1a1a;color:white;border:none;cursor:pointer;font-size:16px;border-radius:5px;transition:0.3s;text-decoration:none;}
-.btn:hover{background:#cc0000;}
-.card-container{display:flex;flex-wrap:wrap;justify-content:center;}
-.card{background:#151515;padding:25px;width:260px;margin:15px;border-radius:10px;border:1px solid #222;transition:0.5s;}
-.card:hover{transform:translateY(-10px);border-color:#ff1a1a;}
-h2{margin-bottom:25px;color:#ff1a1a;}
-ul{list-style:none;}
-ul li{margin:10px 0;color:#ccc;}
-footer{text-align:center;padding:20px;background:#111;border-top:1px solid #222;color:#777;}
-/* Loading animation */
-#loader{position:fixed;top:0;left:0;width:100%;height:100%;background:#0a0a0a;display:flex;justify-content:center;align-items:center;z-index:9999;}
-#loader span{width:50px;height:50px;border:5px solid #ff1a1a;border-top:5px solid transparent;border-radius:50%;animation:spin 1s linear infinite;}
-@keyframes spin{0%{transform:rotate(0deg);}100%{transform:rotate(360deg);}}
-</style></head>
-<body><div id="loader"><span></span></div><header>
-    <div class="logo">Demon Nodes</div>
-    <nav>
-        <a href="#home">Home</a>
-        <a href="#about">About</a>
-        <a href="#services">Services</a>
-        <a href="#rules">Rules</a>
-        <a href="#owners">Owners</a>
-    </nav>
-</header><section class="hero" id="home">
-    <h1>Power That <span>Never Sleeps</span></h1>
-    <p>Premium VPS & Game Hosting with High Speed NVMe and 99.9% Uptime Guarantee.</p>
-    <a href="https://discord.gg/EFFZvMnb2" class="btn">Join Our Discord</a>
-</section><section id="about">
-    <h2>About Demon Nodes</h2>
-    <p>Demon Nodes is a high-performance hosting platform for gamers, developers, and startups. We provide ultra-fast, secure, and stable servers. Our mission is Zero Lag, Zero Downtime, and Maximum Performance.</p>
-</section><section id="services">
-    <h2>What We Provide</h2>
-    <div class="card-container">
-        <div class="card"><h3>⚡ High Performance VPS</h3><p>Fast NVMe SSD based servers for heavy workloads.</p></div>
-        <div class="card"><h3>🎮 Game Hosting</h3><p>Low latency gaming experience with stable uptime.</p></div>
-        <div class="card"><h3>🛡 DDoS Protection</h3><p>Advanced security to protect your servers 24/7.</p></div>
-        <div class="card"><h3>🎧 24/7 Support</h3><p>Dedicated team ready to assist anytime.</p></div>
-    </div>
-</section><section id="rules">
-    <h2>Our Rules</h2>
-    <ul>
-        <li>✔ No Illegal Activities Allowed</li>
-        <li>✔ No Abuse or DDoS Attacks</li>
-        <li>✔ Respect Support Team</li>
-        <li>✔ No Resource Misuse</li>
-        <li>✔ Follow Community Guidelines</li>
-    </ul>
-</section><section id="owners">
-    <h2>Demon Nodes Leadership & Team</h2>
-    <div class="card-container">
-        <div class="card"><h3>👑 Night Claw</h3><p>Founder of Demon Nodes</p></div>
-        <div class="card"><h3>👑 Sai Ganesh</h3><p>Owner of Demon Nodes</p></div>
-        <div class="card"><h3>🛡 Khalsa Raj</h3><p>Admin - Demon Nodes Management</p></div>
-        <div class="card"><h3>⚔ Elite Ansh</h3><p>Official Staff - Demon Nodes</p></div>
-        <div class="card"><h3>⚔ Digit</h3><p>Official Staff - Demon Nodes</p></div>
-    </div>
-</section><footer>
-    © 2026 Demon Nodes. All Rights Reserved.
-</footer><script>
-// Loader fade out
-window.addEventListener('load',()=>{document.getElementById('loader').style.display='none';});
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lenex Hosting | Minecraft & VPS Hosting</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-// Scroll animation
-const sections = document.querySelectorAll('section');
-const observer = new IntersectionObserver(entries=>{
-    entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('visible');}});
-},{threshold:0.1});
-sections.forEach(section=>{observer.observe(section);});
-</script></body>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: #0a0a2a;
+            color: white;
+        }
+
+        header {
+            background: linear-gradient(135deg, #0a0a2a, #1a1a4a);
+            padding: 20px 0;
+            border-bottom: 2px solid #00ffaa;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .logo span {
+            color: #00ffaa;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            margin-left: 30px;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #00ffaa;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 100px 0;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 span {
+            color: #00ffaa;
+        }
+
+        .hero p {
+            font-size: 20px;
+            margin-bottom: 30px;
+            color: #ccc;
+        }
+
+        .btn {
+            background: #00ffaa;
+            color: #0a0a2a;
+            padding: 12px 30px;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 30px;
+            transition: 0.3s;
+            display: inline-block;
+        }
+
+        .btn:hover {
+            background: #00cc88;
+            transform: scale(1.05);
+        }
+
+        .plans {
+            padding: 80px 0;
+            background: #0f0f35;
+        }
+
+        .plans h2 {
+            text-align: center;
+            font-size: 36px;
+            margin-bottom: 50px;
+        }
+
+        .plan-cards {
+            display: flex;
+            gap: 30px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .card {
+            background: #1a1a4a;
+            padding: 30px;
+            border-radius: 20px;
+            width: 280px;
+            text-align: center;
+            transition: 0.3s;
+            border: 1px solid #2a2a5a;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            border-color: #00ffaa;
+        }
+
+        .card h3 {
+            font-size: 28px;
+            margin-bottom: 15px;
+        }
+
+        .price {
+            font-size: 32px;
+            color: #00ffaa;
+            margin: 20px 0;
+        }
+
+        .card ul {
+            list-style: none;
+            margin: 20px 0;
+        }
+
+        .card li {
+            margin: 10px 0;
+            color: #ccc;
+        }
+
+        footer {
+            background: #050520;
+            text-align: center;
+            padding: 30px 0;
+            margin-top: 50px;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            .hero h1 {
+                font-size: 32px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="container">
+        <nav>
+            <div class="logo">Lenex<span>Hosting</span></div>
+            <div class="nav-links">
+                <a href="#">Home</a>
+                <a href="#">Minecraft Hosting</a>
+                <a href="#">VPS</a>
+                <a href="#">Pricing</a>
+                <a href="#">Contact</a>
+            </div>
+        </nav>
+    </div>
+</header>
+
+<section class="hero">
+    <div class="container">
+        <h1>Ultimate <span>Minecraft & VPS</span> Hosting</h1>
+        <p>Lag-free servers | 24/7 support | DDoS Protection | Instant Setup</p>
+        <a href="#" class="btn">Get Started →</a>
+    </div>
+</section>
+
+<section class="plans">
+    <div class="container">
+        <h2>Our Hosting Plans</h2>
+        <div class="plan-cards">
+            <div class="card">
+                <h3>Minecraft Basic</h3>
+                <div class="price">₹499/mo</div>
+                <ul>
+                    <li>2GB RAM</li>
+                    <li>Unlimited Slots</li>
+                    <li>DDoS Protection</li>
+                    <li>24/7 Support</li>
+                </ul>
+                <a href="#" class="btn">Buy Now</a>
+            </div>
+            <div class="card">
+                <h3>Minecraft Pro</h3>
+                <div class="price">₹999/mo</div>
+                <ul>
+                    <li>6GB RAM</li>
+                    <li>Unlimited Slots</li>
+                    <li>Free Domain</li>
+                    <li>Priority Support</li>
+                </ul>
+                <a href="#" class="btn">Buy Now</a>
+            </div>
+            <div class="card">
+                <h3>VPS Starter</h3>
+                <div class="price">₹1499/mo</div>
+                <ul>
+                    <li>2 vCPU</li>
+                    <li>4GB RAM</li>
+                    <li>50GB SSD</li>
+                    <li>Root Access</li>
+                </ul>
+                <a href="#" class="btn">Buy Now</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <div class="container">
+        <p>© 2026 Lenex Hosting. All rights reserved. | Minecraft & VPS Hosting</p>
+    </div>
+</footer>
+
+</body>
 </html>
