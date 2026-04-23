@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zeron Cloud | Infrastructure by Aayan</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&family=Fira+Code:wght@400;500&display=swap');
+
+        :root {
+            --bg: #030008;
+            --surface: #0a0514;
+            --primary: #9d50bb;
+            --accent: #6e48aa;
+            --text-main: #f0ebf8;
+            --text-dim: #9486aa;
+            --glow: rgba(157, 80, 187, 0.3);
+            --border: #1f1433;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: var(--bg);
+            color: var(--text-main);
+            overflow-x: hidden;
+        }
+
+        /* --- Background Animation --- */
+        .stars {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            z-index: -1;
+            background: radial-gradient(circle at 50% 50%, #160a2c 0%, #030008 100%);
+            overflow: hidden;
+        }
+
+        .star {
+            position: absolute;
+            background: white;
+            border-radius: 50%;
+            opacity: 0.3;
+            animation: moveStars linear infinite;
+        }
+
+        @keyframes moveStars {
+            from { transform: translateY(0); }
+            to { transform: translateY(-1000px); }
+        }
+
+        /* --- Hero Section --- */
+        .hero {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0 20px;
+        }
+
+        .hero-badge {
+            background: rgba(157, 80, 187, 0.1);
+            border: 1px solid var(--primary);
+            color: var(--primary);
+            padding: 8px 20px;
+            border-radius: 100px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 2px;
+            margin-bottom: 25px;
+            animation: pulse 2s infinite;
+        }
+
+        .hero h1 {
+            font-size: clamp(3rem, 10vw, 6rem);
+            font-weight: 800;
+            background: linear-gradient(135deg, #fff 30%, var(--primary) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 15px;
+        }
+
+        .hero p {
+            color: var(--text-dim);
+            max-width: 600px;
+            font-size: 1.1rem;
+            margin-bottom: 35px;
+        }
+
+        .btn-group { display: flex; gap: 15px; }
+        .btn {
+            padding: 16px 32px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: white;
+            box-shadow: 0 10px 20px var(--glow);
+        }
+
+        .btn-primary:hover { transform: translateY(-5px); box-shadow: 0 15px 30px var(--glow); }
+
+        /* --- Infrastructure Section --- */
+        .section { padding: 100px 20px; max-width: 1200px; margin: 0 auto; }
+        .section-header { text-align: center; margin-bottom: 60px; }
+        .section-header h2 { font-size: 2.5rem; color: #fff; margin-bottom: 10px; }
+
+        .nodes-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
+
+        .node-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            padding: 40px;
+            border-radius: 24px;
+            transition: 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .node-card:hover {
+            border-color: var(--primary);
+            background: rgba(157, 80, 187, 0.05);
+            transform: scale(1.02);
+        }
+
+        .node-icon {
+            width: 60px; height: 60px;
+            background: rgba(157, 80, 187, 0.1);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            color: var(--primary);
+            font-size: 1.5rem;
+        }
+
+        .status-dot {
+            height: 8px; width: 8px;
+            background: #50fa7b;
+            border-radius: 50%;
+            display: inline-block;
+            margin-right: 8px;
+            box-shadow: 0 0 10px #50fa7b;
+        }
+
+        /* --- Registry / Code Block --- */
+        .code-window {
+            background: #05020a;
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            overflow: hidden;
+            margin-top: 40px;
+        }
+
+        .code-top {
+            background: #11081f;
+            padding: 12px 20px;
+            display: flex;
+            gap: 8px;
+        }
+
+        .dot { width: 12px; height: 12px; border-radius: 50%; }
+        .red { background: #ff5f56; } .yellow { background: #ffbd2e; } .green { background: #27c93f; }
+
+        .code-content {
+            padding: 30px;
+            font-family: 'Fira Code', monospace;
+            font-size: 0.95rem;
+            line-height: 1.8;
+            color: #d1b1ff;
+        }
+
+        /* --- Legal Section --- */
+        .legal-box {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 24px;
+            padding: 40px;
+            margin-top: 60px;
+        }
+
+        .legal-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+
+        h3 { color: var(--primary); margin-bottom: 15px; }
+        .legal-text { color: var(--text-dim); font-size: 0.9rem; }
+
+        footer {
+            text-align: center;
+            padding: 60px 20px;
+            border-top: 1px solid var(--border);
+            color: var(--text-dim);
+            font-size: 0.9rem;
+        }
+
+        @keyframes pulse {
+            0% { opacity: 0.8; }
+            50% { opacity: 1; transform: scale(1.05); }
+            100% { opacity: 0.8; }
+        }
+
+        @media (max-width: 768px) {
+            .legal-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="stars" id="star-field"></div>
+
+    <section class="hero">
+        <div class="hero-badge">INFRASTRUCTURE V2.0</div>
+        <h1>ZERON CLOUD</h1>
+        <p>Experience the next generation of VPS and Game Hosting. Powered by high-speed NVMe nodes and Aayan's custom-built virtualization protocol.</p>
+        <div class="btn-group">
+            <a href="#nodes" class="btn btn-primary">Deploy Now</a>
+            <a href="#legal" class="btn" style="border: 1px solid var(--border); color: #fff;">Read Docs</a>
+        </div>
+    </section>
+
+    <section class="section" id="nodes">
+        <div class="section-header">
+            <h2>Global Presence</h2>
+            <p style="color: var(--text-dim);">Low latency, high availability across our primary nodes.</p>
+        </div>
+        
+        <div class="nodes-container">
+            <div class="node-card">
+                <div class="node-icon"><i class="fas fa-map-marker-alt"></i></div>
+                <h3>Mumbai, IN</h3>
+                <p class="legal-text" style="margin-bottom: 15px;">Optimized for Indian subcontinent traffic with Tier-4 data centers.</p>
+                <div><span class="status-dot"></span> <span style="font-size: 0.8rem; font-weight: 600;">ACTIVE</span></div>
+            </div>
+
+            <div class="node-card">
+                <div class="node-icon"><i class="fas fa-globe-asia"></i></div>
+                <h3>Singapore, SG</h3>
+                <p class="legal-text" style="margin-bottom: 15px;">Strategic hub for SEA region. Ultra-low ping for gamers.</p>
+                <div><span class="status-dot"></span> <span style="font-size: 0.8rem; font-weight: 600;">ACTIVE</span></div>
+            </div>
+
+            <div class="node-card">
+                <div class="node-icon"><i class="fas fa-server"></i></div>
+                <h3>USA (West)</h3>
+                <p class="legal-text" style="margin-bottom: 15px;">High-bandwidth backbone for global distribution and scalability.</p>
+                <div><span class="status-dot"></span> <span style="font-size: 0.8rem; font-weight: 600;">ACTIVE</span></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="section-header">
+            <h2>Registry & Ownership</h2>
+        </div>
+        <div class="code-window">
+            <div class="code-top">
+                <div class="dot red"></div><div class="dot yellow"></div><div class="dot green"></div>
+                <span style="margin-left: 10px; font-size: 0.7rem; color: #555;">root@zeron-cloud ~ /infra-stats</span>
+            </div>
+            <div class="code-content">
+                <span style="color: #ff79c6;">{</span><br>
+                &nbsp;&nbsp;<span style="color: #8be9fd;">"project_name"</span>: <span style="color: #f1fa8c;">"Zeron Cloud"</span>,<br>
+                &nbsp;&nbsp;<span style="color: #8be9fd;">"owner_handle"</span>: <span style="color: #f1fa8c;">"Aayan"</span>,<br>
+                &nbsp;&nbsp;<span style="color: #8be9fd;">"role"</span>: <span style="color: #f1fa8c;">"Infrastructure Architect"</span>,<br>
+                &nbsp;&nbsp;<span style="color: #8be9fd;">"core_tech"</span>: [<span style="color: #f1fa8c;">"Pterodactyl"</span>, <span style="color: #f1fa8c;">"Docker"</span>, <span style="color: #f1fa8c;">"Wings"</span>],<br>
+                &nbsp;&nbsp;<span style="color: #8be9fd;">"network"</span>: <span style="color: #f1fa8c;">"Isolated L3 Private Net"</span>,<br>
+                &nbsp;&nbsp;<span style="color: #8be9fd;">"status"</span>: <span style="color: #50fa7b;">"Stable"</span><br>
+                <span style="color: #ff79c6;">}</span>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="legal">
+        <div class="legal-box">
+            <div class="legal-grid">
+                <div>
+                    <h3>Terms of Service</h3>
+                    <p class="legal-text">
+                        By using Zeron Cloud, you agree to Aayan's hosting protocols. 
+                        Abuse of network bandwidth or illegal script hosting will result 
+                        in an immediate IP-null route. Resource limits are strictly 
+                        enforced by Docker containers.
+                    </p>
+                </div>
+                <div>
+                    <h3>Data & Privacy</h3>
+                    <p class="legal-text">
+                        We prioritize infrastructure integrity. Data stored on our SG, 
+                        USA, or IN nodes is encrypted. We do not sell user metadata. 
+                        Root access is strictly managed by the Zeron security team.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>Built with 💜 for the Zeron Community.</p>
+        <p style="margin-top: 10px; font-weight: 600;">© 2026 Zeron Cloud Infrastructure | Lead: Aayan</p>
+    </footer>
+
+    <script>
+        // Generate Stars
+        const field = document.getElementById('star-field');
+        for(let i=0; i<100; i++) {
+            const star = document.createElement('div');
+            star.className = 'star';
+            const size = Math.random() * 3;
+            star.style.width = size + 'px';
+            star.style.height = size + 'px';
+            star.style.left = Math.random() * 100 + '%';
+            star.style.top = Math.random() * 100 + '%';
+            star.style.animationDuration = (Math.random() * 50 + 50) + 's';
+            field.appendChild(star);
+        }
+    </script>
+</body>
+</html>
+
