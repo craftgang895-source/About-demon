@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="gu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zeron Cloud | Documentation</title>
+    <style>
+        :root {
+            --primary: #6c5ce7;
+            --secondary: #a29bfe;
+            --bg: #0f0f1e;
+            --card-bg: #1a1a2e;
+            --text: #ffffff;
+            --accent: #00d2ff;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            margin: 0;
+            line-height: 1.6;
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            padding: 40px 20px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .doc-section {
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 25px;
+            margin-bottom: 30px;
+            border-left: 5px solid var(--accent);
+        }
+
+        h1, h2 {
+            margin-top: 0;
+        }
+
+        .code-block {
+            background: #000;
+            color: #50fa7b;
+            padding: 20px;
+            border-radius: 8px;
+            font-family: 'Courier New', Courier, monospace;
+            overflow-x: auto;
+            position: relative;
+            border: 1px solid #333;
+        }
+
+        .code-keyword { color: #ff79c6; }
+        .code-string { color: #f1fa8c; }
+        .code-comment { color: #6272a4; }
+
+        .badge {
+            display: inline-block;
+            background: var(--primary);
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>☁️ ZERON CLOUD</h1>
+    <p>The Future of Aesthetic Hosting Infrastructure</p>
+</header>
+
+<div class="container">
+    <div class="doc-section">
+        <span class="badge">Docs v1.0</span>
+        <h2>Infrastructure Overview</h2>
+        <p>Zeron Cloud એક હાઈ-પરફોર્મન્સ હોસ્ટિંગ ઈન્ફ્રાસ્ટ્રક્ચર છે જે Docker અને Pterodactyl પર આધારિત છે.</p>
+    </div>
+
+    <div class="doc-section">
+        <h2>System Configuration (JSON)</h2>
+        <p>તમારા ઇન્ફ્રાસ્ટ્રક્ચર અને ઓનરની વિગતો માટે નીચેનો કોડ જુઓ:</p>
+        
+        <div class="code-block">
+<pre>
+{
+  <span class="code-keyword">"project"</span>: <span class="code-string">"Zeron Cloud"</span>,
+  <span class="code-keyword">"owner"</span>: {
+    <span class="code-keyword">"name"</span>: <span class="code-string">"Aayan"</span>,
+    <span class="code-keyword">"role"</span>: <span class="code-string">"Chief Infrastructure Architect"</span>,
+    <span class="code-keyword">"access"</span>: <span class="code-string">"Full Sudo"</span>
+  },
+  <span class="code-keyword">"infrastructure"</span>: {
+    <span class="code-keyword">"core"</span>: <span class="code-string">"Pterodactyl & Wings"</span>,
+    <span class="code-keyword">"virtualization"</span>: <span class="code-string">"Docker Containers"</span>,
+    <span class="code-keyword">"web_server"</span>: <span class="code-string">"Nginx"</span>,
+    <span class="code-keyword">"status"</span>: <span class="code-string">"Online / Optimized"</span>
+  },
+  <span class="code-keyword">"branding"</span>: <span class="code-string">"Aesthetic Dark Mode"</span>,
+  <span class="code-comment">// Updated: 2026-04</span>
+}</pre>
+        </div>
+    </div>
+
+    <div class="doc-section">
+        <h2>Quick Start Protocol</h2>
+        <ul>
+            <li><strong>Step 1:</strong> Node configuration set up કરો.</li>
+            <li><strong>Step 2:</strong> Wings service ને start કરો.</li>
+            <li><strong>Step 3:</strong> Aayan (Owner) સાથે sync કરી deploy કરો.</li>
+        </ul>
+    </div>
+</div>
+
+<footer style="text-align: center; padding: 20px; color: #666; font-size: 0.9rem;">
+    &copy; 2026 Zeron Cloud | Powered by Aayan
+</footer>
+
+</body>
+</html>
+
