@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zeron Cloud | Documentation & Legal</title>
+    <style>
+        :root {
+            --bg-deep: #0a0514;
+            --bg-card: #150b28;
+            --primary: #8e44ad;
+            --accent: #bb86fc;
+            --text-main: #e0d7f2;
+            --text-dim: #a291c3;
+            --border: #2d1b4d;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, sans-serif;
+            background-color: var(--bg-deep);
+            color: var(--text-main);
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        header {
+            background: linear-gradient(180deg, #1f0f3d 0%, var(--bg-deep) 100%);
+            padding: 60px 20px;
+            text-align: center;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: -40px auto 60px;
+            padding: 0 20px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            margin-bottom: 20px;
+        }
+
+        .full-width { grid-column: span 2; }
+
+        h1, h2, h3 { color: var(--accent); margin-top: 0; }
+        
+        .badge {
+            background: rgba(187, 134, 252, 0.1);
+            color: var(--accent);
+            padding: 4px 12px;
+            border-radius: 6px;
+            font-size: 0.8rem;
+            border: 1px solid var(--accent);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .code-window {
+            background: #05020a;
+            border-radius: 10px;
+            padding: 20px;
+            font-family: 'Fira Code', monospace;
+            font-size: 14px;
+            border: 1px solid var(--border);
+            position: relative;
+        }
+
+        .code-header {
+            color: var(--text-dim);
+            font-size: 12px;
+            margin-bottom: 15px;
+            border-bottom: 1px solid #222;
+            padding-bottom: 5px;
+        }
+
+        .legal-text {
+            font-size: 0.9rem;
+            color: var(--text-dim);
+            max-height: 200px;
+            overflow-y: auto;
+            padding-right: 10px;
+        }
+
+        li { margin-bottom: 10px; }
+        strong { color: var(--accent); }
+
+        @media (max-width: 768px) {
+            .grid { grid-template-columns: 1fr; }
+            .full-width { grid-column: span 1; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>💜 ZERON CLOUD</h1>
+    <p style="color: var(--text-dim);">Secure, Aesthetic, & High-Performance Infrastructure</p>
+</header>
+
+<div class="container">
+    
+    <div class="grid">
+        <div class="card">
+            <span class="badge">Registry</span>
+            <h2>Project Core</h2>
+            <div class="code-window">
+                <div class="code-header">// Core Configuration</div>
+                <div style="color: #cf62fb;">{</div>
+                <div style="padding-left: 20px;">
+                    <span style="color: #8be9fd;">"owner"</span>: <span style="color: #f1fa8c;">"Aayan"</span>,<br>
+                    <span style="color: #8be9fd;">"rank"</span>: <span style="color: #f1fa8c;">"Root Administrator"</span>,<br>
+                    <span style="color: #8be9fd;">"infra"</span>: <span style="color: #f1fa8c;">"Zeron-Private-Network"</span>,<br>
+                    <span style="color: #8be9fd;">"engine"</span>: <span style="color: #f1fa8c;">"Docker + Pterodactyl"</span>,<br>
+                    <span style="color: #8be9fd;">"status"</span>: <span style="color: #50fa7b;">"Fully Operational"</span>
+                </div>
+                <div style="color: #cf62fb;">}</div>
+            </div>
+        </div>
+
+        <div class="card">
+            <span class="badge">Nodes</span>
+            <h2>Infrastructure</h2>
+            <ul style="list-style: none; padding: 0;">
+                <li>🚀 <strong>Hypervisor:</strong> KVM/Docker Based</li>
+                <li>🛡️ <strong>Security:</strong> Nginx Reverse Proxy</li>
+                <li>⚡ <strong>Panel:</strong> Custom Zeron Dashboard</li>
+                <li>🌐 <strong>Location:</strong> Global Edge Nodes</li>
+            </ul>
+        </div>
+
+        <div class="card full-width">
+            <span class="badge">Legal</span>
+            <h2>Terms of Service (ToS)</h2>
+            <div class="legal-text">
+                <p><strong>1. Acceptance of Terms:</strong> By accessing Zeron Cloud, you agree to comply with Aayan's infrastructure protocols. Unauthorized access to root nodes is strictly prohibited.</p>
+                <p><strong>2. Usage Policy:</strong> Users are responsible for all data deployed. Any illegal activities or heavy stress testing without prior approval will lead to instant termination.</p>
+                <p><strong>3. Infrastructure Security:</strong> Our Wings and Docker environments are isolated. Attempting to bypass container limits is a violation of the Zeron Protocol.</p>
+                <p><strong>4. Ownership:</strong> All rights to the Zeron Cloud branding and core infrastructure belong to Aayan and the development team.</p>
+            </div>
+        </div>
+
+        <div class="card full-width">
+            <span class="badge">Privacy</span>
+            <h2>Data Protection</h2>
+            <p>Humara data protection protocol simple hai: Hum aapki privacy ki respect karte hain. Logs sirf debugging aur security purposes ke liye maintain kiye jaate hain. Zero third-party data sharing.</p>
+        </div>
+    </div>
+
+    <footer style="text-align: center; margin-top: 40px; color: var(--text-dim); font-size: 0.8rem;">
+        &copy; 2026 Zeron Cloud Infrastructure | Managed by <strong>Aayan</strong>
+    </footer>
+</div>
+
+</body>
+</html>
+
