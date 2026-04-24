@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zeron Cloud | Co-Founded by Aayan & Sajibul</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&family=Fira+Code:wght@400;500&display=swap');
+
+        :root {
+            --bg: #030008;
+            --surface: #0a0514;
+            --primary: #9d50bb;
+            --accent: #6e48aa;
+            --text-main: #f0ebf8;
+            --text-dim: #9486aa;
+            --glow: rgba(157, 80, 187, 0.3);
+            --border: #1f1433;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: var(--bg);
+            color: var(--text-main);
+            overflow-x: hidden;
+        }
+
+        /* --- Background Animation --- */
+        .stars {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            z-index: -1;
+            background: radial-gradient(circle at 50% 50%, #160a2c 0%, #030008 100%);
+        }
+
+        .star {
+            position: absolute;
+            background: white;
+            border-radius: 50%;
+            opacity: 0.3;
+            animation: moveStars linear infinite;
+        }
+
+        @keyframes moveStars {
+            from { transform: translateY(0); }
+            to { transform: translateY(-1000px); }
+        }
+
+        /* --- Hero Section --- */
+        .hero {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0 20px;
+        }
+
+        .hero-badge {
+            background: rgba(157, 80, 187, 0.1);
+            border: 1px solid var(--primary);
+            color: var(--primary);
+            padding: 8px 20px;
+            border-radius: 100px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 2px;
+            margin-bottom: 25px;
+            animation: pulse 2s infinite;
+        }
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 8vw, 5rem);
+            font-weight: 800;
+            background: linear-gradient(135deg, #fff 30%, var(--primary) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 15px;
+        }
+
+        .hero p {
+            color: var(--text-dim);
+            max-width: 700px;
+            font-size: 1.1rem;
+            margin-bottom: 35px;
+        }
+
+        .btn {
+            padding: 16px 32px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 600;
+            background: var(--primary);
+            color: white;
+            box-shadow: 0 10px 20px var(--glow);
+            transition: 0.3s;
+        }
+
+        .btn:hover { transform: translateY(-3px); box-shadow: 0 15px 30px var(--glow); }
+
+        /* --- Co-Founder Registry Section --- */
+        .section { padding: 80px 20px; max-width: 1200px; margin: 0 auto; }
+        .section-header { text-align: center; margin-bottom: 50px; }
+        
+        .registry-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 20px;
+        }
+
+        .code-window {
+            background: #05020a;
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+        }
+
+        .code-top {
+            background: #11081f;
+            padding: 12px 20px;
+            display: flex;
+            align-items: center;
+        }
+
+        .dot { width: 10px; height: 10px; border-radius: 50%; margin-right: 6px; }
+        .red { background: #ff5f56; } .yellow { background: #ffbd2e; } .green { background: #27c93f; }
+
+        .code-content {
+            padding: 25px;
+            font-family: 'Fira Code', monospace;
+            font-size: 0.85rem;
+            line-height: 1.6;
+        }
+
+        /* --- Infrastructure Nodes --- */
+        .nodes-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin-top: 40px;
+        }
+
+        .node-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            padding: 30px;
+            border-radius: 20px;
+            text-align: center;
+        }
+
+        .node-icon { color: var(--primary); font-size: 1.8rem; margin-bottom: 15px; }
+
+        footer {
+            text-align: center;
+            padding: 60px 20px;
+            border-top: 1px solid var(--border);
+            color: var(--text-dim);
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 0.8; }
+            50% { opacity: 1; transform: scale(1.02); }
+        }
+
+        @media (max-width: 768px) {
+            .registry-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="stars" id="star-field"></div>
+
+    <section class="hero">
+        <div class="hero-badge">OFFICIAL INFRASTRUCTURE</div>
+        <h1>ZERON CLOUD</h1>
+        <p>Advanced cloud solutions co-founded and managed by <b>Aayan</b> & <b>Sajibul Middya</b>. 
+        Deploy your applications on our high-performance nodes across SG, USA, and India.</p>
+        <a href="#nodes" class="btn">View Global Nodes</a>
+    </section>
+
+    <section class="section">
+        <div class="section-header">
+            <h2>Management Registry</h2>
+            <p style="color: var(--text-dim);">Core administrative access and leadership</p>
+        </div>
+        
+        <div class="registry-grid">
+            <div class="code-window">
+                <div class="code-top">
+                    <div class="dot red"></div><div class="dot yellow"></div><div class="dot green"></div>
+                    <span style="font-size: 0.7rem; color: #555; margin-left: 10px;">registry/aayan.json</span>
+                </div>
+                <div class="code-content">
+                    <span style="color: #ff79c6;">{</span><br>
+                    &nbsp;&nbsp;<span style="color: #8be9fd;">"name"</span>: <span style="color: #f1fa8c;">"Aayan"</span>,<br>
+                    &nbsp;&nbsp;<span style="color: #8be9fd;">"role"</span>: <span style="color: #f1fa8c;">"Chief Infrastructure Architect"</span>,<br>
+                    &nbsp;&nbsp;<span style="color: #8be9fd;">"ownership"</span>: <span style="color: #f1fa8c;">"Co-Founder"</span>,<br>
+                    &nbsp;&nbsp;<span style="color: #8be9fd;">"status"</span>: <span style="color: #50fa7b;">"Stable"</span><br>
+                    <span style="color: #ff79c6;">}</span>
+                </div>
+            </div>
+
+            <div class="code-window">
+                <div class="code-top">
+                    <div class="dot red"></div><div class="dot yellow"></div><div class="dot green"></div>
+                    <span style="font-size: 0.7rem; color: #555; margin-left: 10px;">registry/sajibul.json</span>
+                </div>
+                <div class="code-content">
+                    <span style="color: #ff79c6;">{</span><br>
+                    &nbsp;&nbsp;<span style="color: #8be9fd;">"name"</span>: <span style="color: #f1fa8c;">"Sajibul Middya"</span>,<br>
+                    &nbsp;&nbsp;<span style="color: #8be9fd;">"role"</span>: <span style="color: #f1fa8c;">"Chief Technology Officer"</span>,<br>
+                    &nbsp;&nbsp;<span style="color: #8be9fd;">"ownership"</span>: <span style="color: #f1fa8c;">"Co-Founder"</span>,<br>
+                    &nbsp;&nbsp;<span style="color: #8be9fd;">"status"</span>: <span style="color: #50fa7b;">"Fully Operational"</span><br>
+                    <span style="color: #ff79c6;">}</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="nodes">
+        <div class="section-header">
+            <h2>Global Presence</h2>
+        </div>
+        <div class="nodes-container">
+            <div class="node-card">
+                <i class="fas fa-map-marker-alt node-icon"></i>
+                <h3>Mumbai, IN</h3>
+                <p style="color: var(--text-dim); font-size: 0.9rem;">Tier-4 Performance.</p>
+                <div style="color: #50fa7b; font-size: 0.8rem; margin-top: 10px;">● ACTIVE</div>
+            </div>
+            <div class="node-card">
+                <i class="fas fa-globe-asia node-icon"></i>
+                <h3>Singapore, SG</h3>
+                <p style="color: var(--text-dim); font-size: 0.9rem;">Strategic SEA Hub.</p>
+                <div style="color: #50fa7b; font-size: 0.8rem; margin-top: 10px;">● ACTIVE</div>
+            </div>
+            <div class="node-card">
+                <i class="fas fa-server node-icon"></i>
+                <h3>USA (West)</h3>
+                <p style="color: var(--text-dim); font-size: 0.9rem;">High-Bandwidth Backbone.</p>
+                <div style="color: #50fa7b; font-size: 0.8rem; margin-top: 10px;">● ACTIVE</div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 ZERON CLOUD. All rights reserved.</p>
+        <p style="margin-top: 10px; font-weight: 600;">Co-Founded by Aayan & Sajibul Middya</p>
+    </footer>
+
+    <script>
+        const field = document.getElementById('star-field');
+        for(let i=0; i<100; i++) {
+            const star = document.createElement('div');
+            star.className = 'star';
+            const size = Math.random() * 2.5;
+            star.style.width = size + 'px';
+            star.style.height = size + 'px';
+            star.style.left = Math.random() * 100 + '%';
+            star.style.top = Math.random() * 100 + '%';
+            star.style.animationDuration = (Math.random() * 40 + 40) + 's';
+            field.appendChild(star);
+        }
+    </script>
+</body>
+</html>
+
